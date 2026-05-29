@@ -1,0 +1,13 @@
+{
+  "name": "todobit",
+  "version": "1.0.0",
+  "description": "Proyecto Intermodular DAW1 - Grupo 3",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2"
+  }
+}
