@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TodoBit — Juegos Retro</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="logo-todo">Todo</span><span class="logo-bit">Bit</span>
+    </div>
+    <nav>
+      <a href="#" class="nav-link active">INICIO</a>
+      <a href="#juegos" class="nav-link">JUEGOS</a>
+      <a href="#ranking" class="nav-link">RANKING</a>
+
+    </nav>
+  </header>
+
+  <main class="main-layout">
+
+    <section class="login-panel">
+      <h2>Registro / Acceso</h2>
+      <hr class="pixel-hr" />
+
+      <div id="loginForm">
+        <label>Nombre de Usuario:</label>
+        <input type="text" id="loginUser" placeholder="Player_Retro99" class="pixel-input" />
+        <label>Password:</label>
+        <input type="password" id="loginPass" placeholder="********" class="pixel-input" />
+        <button class="btn-ingresar" id="btnIngresarLogin">INGRESAR</button>
+        <p class="switch-link">¿Sin cuenta? <a href="#" id="goRegister">REGÍSTRATE</a></p>
+      </div>
+
+      <div id="registerForm" class="hidden">
+        <label>Nombre de Usuario:</label>
+        <input type="text" id="regUser" class="pixel-input" />
+        <label>Email:</label>
+        <input type="email" id="regEmail" class="pixel-input" />
+        <label>Introduce tu Edad:</label>
+        <input type="number" id="regEdad" placeholder="25" class="pixel-input age-input" />
+        <label>Password:</label>
+        <input type="password" id="regPass" class="pixel-input" />
+        <button class="btn-ingresar" id="btnIngresarRegistro">CREAR CUENTA</button>
+        <p class="switch-link">¿Ya tienes cuenta? <a href="#" id="goLogin">ACCEDER</a></p>
+      </div>
+
+      <p id="msg" style="font-family: var(--font-pixel); font-size: 8px; margin-top: 12px; text-align: center;"></p>
+    </section>
+
+    <section class="catalog-panel" id="juegos">
+      <h2>Catalogo de Juegos</h2>
+      <hr class="pixel-hr" />
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">TODOS</button>
+        <button class="filter-btn" data-filter="accion">ACCIÓN</button>
+        <button class="filter-btn" data-filter="puzzle">PUZZLE</button>
+        <button class="filter-btn" data-filter="arcade">ARCADE</button>
+      </div>
+
+      <div class="games-grid" id="gamesGrid">
+
+        <div class="game-card" data-genre="arcade">
+          <div class="card-img snake-bg">
+            <div class="snake-pixel"></div>
+          </div>
+          <div class="card-body">
+            <h3>SNAKE</h3>
+            <p>El clásico de la serpiente. Come y crece sin chocar.</p>
+            <button class="btn-jugar">JUGAR</button>
+          </div>
+        </div>
+
+        <div class="game-card featured" data-genre="accion">
+          <div class="top-label">TOP 1</div>
+          <div class="card-img space-bg">
+            <div class="spaceship-pixel"></div>
+          </div>
+          <div class="card-body">
+            <h3>SPACE INVADERS</h3>
+            <p>Esquiva y destruye aliens en este clásico de acción.</p>
+            <button class="btn-jugar">JUGAR</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-genre="puzzle">
+          <div class="card-img tetris-bg">
+            <div class="block-pixel"></div>
+          </div>
+          <div class="card-body">
+            <h3>TETRIS</h3>
+            <p>Encaja las piezas antes de que lleguen arriba.</p>
+            <button class="btn-jugar">JUGAR</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-genre="arcade">
+          <div class="card-img pacman-bg">
+            <div class="pacman-pixel"></div>
+          </div>
+          <div class="card-body">
+            <h3>PAC-MAN</h3>
+            <p>Come puntos y huye de los fantasmas.</p>
+            <button class="btn-jugar">JUGAR</button>
+          </div>
+        </div>
+
+        <div class="game-card locked" data-genre="accion">
+          <div class="card-img frogger-bg">
+            <div class="frog-pixel"></div>
+          </div>
+          <div class="card-body">
+            <h3>FROGGER</h3>
+            <p>Cruza la carretera sin ser atropellado. Próximamente.</p>
+            <button class="btn-jugar" disabled>PRONTO</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-genre="puzzle">
+          <div class="card-img breakout-bg">
+            <div class="paddle-pixel"></div>
+          </div>
+          <div class="card-body">
+            <h3>BREAKOUT</h3>
+            <p>Rompe todos los bloques con la pelota y la paleta.</p>
+            <button class="btn-jugar">JUGAR</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <section class="ranking-section" id="ranking">
+    <h2><span class="bracket">[</span> TOP 5 GLOBAL <span class="bracket">]</span></h2>
+    <table class="ranking-table">
+      <thead>
+        <tr><th>#</th><th>JUGADOR</th><th>JUEGO</th><th>PUNTOS</th></tr>
+      </thead>
+      <tbody>
+        <tr class="gold"><td>🥇</td><td>PlayerOne</td><td>Space Invaders</td><td>99.999</td></tr>
+        <tr class="silver"><td>🥈</td><td>Jose_Dev</td><td>Snake</td><td>45.200</td></tr>
+        <tr class="bronze"><td>🥉</td><td>RetroKing</td><td>Tetris</td><td>38.900</td></tr>
+        <tr><td>4</td><td>Etienne42</td><td>Pac-Man</td><td>32.100</td></tr>
+        <tr><td>5</td><td>Artur_8bit</td><td>Snake</td><td>28.750</td></tr>
+      </tbody>
+    </table>
+    <a href="#" class="btn-ghost">VER RANKING COMPLETO →</a>
+  </section>
+
+  <footer>
+    <p class="footer-logo"><span class="logo-todo">Todo</span><span class="logo-bit">Bit</span></p>
+    <p>© 2025 TodoBit — Grupo 3: Jose · Etienne · Bradan · Artur</p>
+    <p class="footer-sub">Proyecto Intermodular DAW1</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.game-card').forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.genre === filter) ? '' : 'none';
+        });
+      });
+    });
+
+    document.getElementById('goRegister').addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('loginForm').classList.add('hidden');
+      document.getElementById('registerForm').classList.remove('hidden');
+      document.getElementById('msg').textContent = '';
+    });
+    document.getElementById('goLogin').addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('registerForm').classList.add('hidden');
+      document.getElementById('loginForm').classList.remove('hidden');
+      document.getElementById('msg').textContent = '';
+    });
+
+    function mostrarMensaje(texto, ok) {
+      const el = document.getElementById('msg');
+      el.textContent = texto;
+      el.style.color = ok ? '#00ff88' : '#ff3cac';
+    }
+
+    document.getElementById('btnIngresarLogin').addEventListener('click', async () => {
+      const username = document.getElementById('loginUser').value.trim();
+      const password = document.getElementById('loginPass').value;
+
+      if (!username || !password) {
+        return mostrarMensaje('Rellena todos los campos', false);
+      }
+
+      try {
+        const res  = await fetch('/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        mostrarMensaje(data.mensaje, data.ok);
+      } catch (err) {
+        mostrarMensaje('No se pudo conectar con el servidor', false);
+      }
+    });
+
+    document.getElementById('btnIngresarRegistro').addEventListener('click', async () => {
+      const username = document.getElementById('regUser').value.trim();
+      const email    = document.getElementById('regEmail').value.trim();
+      const edad     = document.getElementById('regEdad').value;
+      const password = document.getElementById('regPass').value;
+
+      if (!username || !email || !edad || !password) {
+        return mostrarMensaje('Rellena todos los campos', false);
+      }
+
+      try {
+        const res  = await fetch('/registro', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, email, edad, password })
+        });
+        const data = await res.json();
+        mostrarMensaje(data.mensaje, data.ok);
+        if (data.ok) {
+          setTimeout(() => {
+            document.getElementById('registerForm').classList.add('hidden');
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('msg').textContent = '';
+          }, 1500);
+        }
+      } catch (err) {
+        mostrarMensaje('No se pudo conectar con el servidor', false);
+      }
+    });
+  </script>
+</body>
+</html>
